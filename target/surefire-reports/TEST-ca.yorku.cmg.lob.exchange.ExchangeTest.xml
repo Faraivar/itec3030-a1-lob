@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="ca.yorku.cmg.lob.exchange.ExchangeTest" time="0.067" tests="1" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="23"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="C:\Users\FM_Re\Desktop\New folder\itec3030-a1-lob\target\test-classes;C:\Users\FM_Re\Desktop\New folder\itec3030-a1-lob\target\classes;C:\Users\FM_Re\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.11.0\junit-jupiter-api-5.11.0.jar;C:\Users\FM_Re\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\FM_Re\.m2\repository\org\junit\platform\junit-platform-commons\1.11.0\junit-platform-commons-1.11.0.jar;C:\Users\FM_Re\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\FM_Re\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.11.0\junit-jupiter-params-5.11.0.jar;C:\Users\FM_Re\Desktop\New folder\itec3030-a1-lob\bin\lib\core-0.0.1-SNAPSHOT.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="America/Toronto"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="23"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="CA"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-23\bin"/>
+    <property name="sun.java.command" value="C:\Users\FM_Re\AppData\Local\Temp\surefire16102517815821894488\surefirebooter-20250202221857146_3.jar C:\Users\FM_Re\AppData\Local\Temp\surefire16102517815821894488 2025-02-02T22-18-57_062-jvmRun1 surefire-20250202221857146_1tmp surefire_0-20250202221857146_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\FM_Re\Desktop\New folder\itec3030-a1-lob\target\test-classes;C:\Users\FM_Re\Desktop\New folder\itec3030-a1-lob\target\classes;C:\Users\FM_Re\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.11.0\junit-jupiter-api-5.11.0.jar;C:\Users\FM_Re\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\FM_Re\.m2\repository\org\junit\platform\junit-platform-commons\1.11.0\junit-platform-commons-1.11.0.jar;C:\Users\FM_Re\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\FM_Re\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.11.0\junit-jupiter-params-5.11.0.jar;C:\Users\FM_Re\Desktop\New folder\itec3030-a1-lob\bin\lib\core-0.0.1-SNAPSHOT.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\FM_Re"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-01-21"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-23"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\FM_Re\Desktop\New folder\itec3030-a1-lob"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\FM_Re\AppData\Local\Temp\surefire16102517815821894488\surefirebooter-20250202221857146_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="23.0.2+7-58"/>
+    <property name="user.name" value="FM_Re"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\FM_Re\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\FM_Re\AppData\Local\Temp\"/>
+    <property name="java.version" value="23.0.2"/>
+    <property name="user.dir" value="C:\Users\FM_Re\Desktop\New folder\itec3030-a1-lob"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-23\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Microsoft MPI\Bin\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\dotnet\;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\dotnet\;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files\PuTTY\;C:\Program Files\Git\cmd;C:\apache-maven-3.9.9\bin;C:\Users\FM_Re\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\FM_Re\AppData\Local\Programs\Python\Python311\;C:\Users\FM_Re\AppData\Local\Microsoft\WindowsApps;C:\Users\FM_Re\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\FM_Re\.dotnet\tools;E:\platform-tools\fastboot.exe;;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="23.0.2+7-58"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="67.0"/>
+  </properties>
+  <testcase name="testSubmitOrder" classname="ca.yorku.cmg.lob.exchange.ExchangeTest" time="0.045">
+    <system-out><![CDATA[
+
+ *** T r a d e s    E x e c u t e d ***
+
+[From____  To______  Tkr_  Quantity  Price__  Time____]
+[       5         2  GOOG        34   281.48        80]
+[       3         2  GOOG         6   278.70       160]
+[       6         1  MSFT        23   665.95       180]
+[       7         4  NVDA        11   113.68       190]
+[       4         1  AVGO        10   186.06       250]
+[       2         4  TSLA        27   527.13       410]
+[       2         6  TSLA         6   527.13       410]
+[       2         8  MSFT        22   488.49       440]
+[       6         5  GOOG        26   253.95       460]
+[       5         8  MSFT        16   425.86       520]
+[       5         6  MSFT        25   425.86       520]
+[       4         3  TSLA        12   669.63       550]
+[       6         1  NVDA        34   169.38       580]
+[       2         4  AMZN        13   277.85       590]
+[       8         4  AMZN        17   283.60       590]
+[       6         3  TSLA        13   553.72       630]
+[       6         8  TSLA        18   553.72       630]
+[       4         5  AAPL        36   283.66       640]
+[       4         7  AAPL         3   283.66       650]
+[       3         7  AAPL        31   361.50       650]
+[       1         6  GOOG        16   228.01       660]
+[       5         8  TSLA        32   508.21       670]
+[       5         6  TSLA         9   508.21       670]
+[       6         3  MSFT         5   665.95       710]
+[       8         3  MSFT        31   642.54       720]
+[       6         2  NVDA         3   169.38       730]
+[       8         2  NVDA        47   265.12       730]
+[       5         6  NVDA        32    90.44       740]
+[       6         3  AMZN        18   303.42       750]
+[       3         6  AAPL         8   361.50       760]
+[       1         6  AAPL        17   263.94       780]
+[       1         4  AAPL         4   263.94       780]
+[       1         7  AVGO        24   414.07       800]
+[       4         3  MSFT        11   476.85       860]
+[       4         6  MSFT         9   476.85       860]
+[       6         7  AVGO        11   350.71       910]
+[       8         7  AVGO        14   333.70       920]
+[       8         1  AVGO        14   333.70       920]
+[       8         2  META        24   671.16       930]
+[       3         2  META        14   693.55       930]
+[       1         5  TSLA        21   281.15       940]
+[       1         1  TSLA         4   281.15       940]
+[       6         8  AAPL        27   464.60      1000]
+[       1         4  AMZN        12   279.87      1010]
+[       3         1  AVGO         3   292.86      1020]
+[       3         8  AVGO        23   292.86      1020]
+[       5         7  TSLA         7   508.21      1030]
+[       8         7  TSLA        20   646.84      1030]
+[       2         4  AAPL         7   273.57      1040]
+[       3         8  NVDA        31   212.34      1060]
+[       5         8  AVGO        23   229.30      1070]
+[       5         6  AVGO        11   229.30      1070]
+[       4         2  MSFT         9   476.85      1080]
+[       3         6  META        15   693.55      1100]
+[       7         6  META        29   712.47      1100]
+[       1         8  NVDA        19   200.80      1150]
+[       1         7  MSFT        21   745.05      1170]
+[       3         7  MSFT        18   880.77      1170]
+[       7         1  META         2   712.47      1180]
+[       6         1  META        22   776.36      1180]
+[       4         1  META         3  1011.28      1180]
+[       7         7  TSLA        18   657.61      1190]
+[       1         1  GOOG         2   228.01      1200]
+[       1         5  AMZN        11   279.87      1240]
+[       4         5  AMZN        17   295.78      1240]
+[       6         5  AMZN         8   303.42      1240]
+[       5         5  AMZN        12   335.44      1240]
+[       2         6  AVGO        10   270.21      1270]
+[       2         3  AVGO        16   270.21      1270]
+
+
+
+ *** O r i g i n a l   B a l a n c e s ***
+
+[_Institution_____________________ Balance_________]
+[ 1                Bank of Toronto  $100,000,000.00]
+[ 2             Bank of North York   $50,000,000.00]
+[ 3 Government Workers Pension Fun   $40,000,000.00]
+[ 4                  ABC Bank Fund   $25,000,000.00]
+[ 5                     John Smith        $5,000.00]
+[ 6                    Alice Smith      $100,000.00]
+[ 7                     Smith Fund    $1,000,000.00]
+[ 8  Three little pigs investments   $10,000,000.00]
+[                           TOTAL:  $226,105,000.00]
+
+
+
+ *** N e w   B a l a n c e s ***
+
+[_Institution_____________________ Balance_________]
+[ 1                Bank of Toronto  $100,000,695.54]
+[ 2             Bank of North York   $49,986,234.08]
+[ 3 Government Workers Pension Fun   $40,012,261.73]
+[ 4                  ABC Bank Fund   $25,012,444.22]
+[ 5                     John Smith       $33,785.64]
+[ 6                    Alice Smith      $117,059.21]
+[ 7                     Smith Fund      $944,678.10]
+[ 8  Three little pigs investments    $9,996,686.98]
+[                           TOTAL:  $226,103,845.50]
+
+            Fees Collected TOTAL:        $1,154.50
+
+
+
+
+              **********************
+              *** Tests Complete ***
+              ********************** 
+
+
+]]></system-out>
+    <system-err><![CDATA[Order validation: buyer with ID 5 does not have enough balance: has $14,565.82 and tries to buy for $28,968.30
+Order validation: seller with ID 7 not enough shares of AMZN: has 20 and tries to sell 44
+]]></system-err>
+  </testcase>
+</testsuite>
