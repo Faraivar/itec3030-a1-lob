@@ -55,25 +55,25 @@ public class Exchange {
      */
 	public boolean validateOrder(IOrder o) {
 		// Does ticker exist? See if the security associated with the order exists in the list of securities
-		if (__________________________ == null) {
-			System.err.println("Order validation: ticker " + ______________.getTicker() + " not supported.");
+		if (securities.getSecurityByTicker(o.getSecurity().getTicker()) == null) {
+			System.err.println("Order validation: ticker " + o.getSecurity().getTicker() + " not supported.");
 			return (false);
 		}
 		
 		//Does the trader exist? Check to see if the trader exists 
-		if (__________________________ == null) {
-			System.err.println("Order validation: trader with ID " + _______________.getID() + " not registered with the exchange.");
+		if (accounts.getTraderByID(o.getTrader().getID()) == null) {
+			System.err.println("Order validation: trader with ID " + o.getTrader().getID() + " not registered with the exchange.");
 			return (false);
 		}
 
 		//Put in pos the position that the trader mentioned in the order has in the security mentioned in the order
-		int pos = ___________________________________;
+		int pos = accounts.getTraderAccount(o.getTrader()).getPosition(o.getSecurity().getTicker());
 		//Get the balance the trader has with the exchange
-		long bal = __________________________________;
+		long bal = accounts.getTraderAccount(o.getTrader()).getBalance();
 
 		// Does ask trader have position at the security sufficient for a sell?
 		if ((o instanceof Ask) && (pos < o.getQuantity())) {
-			System.err.println("Order validation: seller with ID " + _________.getID() + " not enough shares of " + _________.getTicker() + ": has " + pos + " and tries to sell " + _____.getQuantity());
+			System.err.println("Order validation: seller with ID " + o.getTrader().getID() + " not enough shares of " + o.getSecurity().getTicker() + ": has " + pos + " and tries to sell " + o.getQuantity());
 			return (false);
 		}
 		
@@ -81,7 +81,7 @@ public class Exchange {
 		if ((o instanceof Bid) && (bal < o.getValue())) {
 			System.err.println(
 					String.format("Order validation: buyer with ID %d does not have enough balance: has $%,.2f and tries to buy for $%,.2f",
-							____________.getID(), bal/100.0,o.getValue()/100.0));
+							o.getTrader().getID(), bal/100.0,o.getValue()/100.0));
 					
 			return (false);
 		}
@@ -105,19 +105,21 @@ public class Exchange {
 		//This is a bid for a security
 		if (o instanceof Bid) {// Order is a bid
 			//Go to the asks half-book, see if there are matching asks (selling offers) and process them
-			oOutcome = ____________.processOrder(o, time);
+			oOutcome = book.getAsks().processOrder(o, time);
 			//If the quanity of the unfulfilled order in the outcome is not zero
-			if (_____________________ > 0) {
-				//Not the entire bid order was fulfilled, add the unfulfilled part to the bid half-book 
-				_______________________________________________;
+			if (oOutcome.getUnfulfilledOrder().getQuantity() > 0) {
+				//Not the entire order was fulfilled, add the unfulfilled order to the bid half-book 
+				book.getBids().addOrder((Bid) oOutcome.getUnfulfilledOrder());
+				
 			}
 		} else { //order is an ask
 			//Go to the bids half-book and see if there are matching bids (buying offers) and process them
-			oOutcome = ____________.processOrder(o, time);
+			oOutcome = book.getBids().processOrder(o, time);
 			//If the quanity of the unfulfilled order in the outcome is not zero
 			if (oOutcome.getUnfulfilledOrder().getQuantity() > 0) {
-				//Not the entire ask order was fulfilled, add the unfulfilled part to the ask half-book 
-				_______________________________________________;
+				// Not the entire order was fulfilled, add it to the bid half-book
+				book.getAsks().addOrder((Ask) oOutcome.getUnfulfilledOrder());
+				
 			}			
 		}
 
@@ -134,24 +136,24 @@ public class Exchange {
 			//Update balances for Buyer
 			
 			//Get the fee that they buyer is supposed to pay
-			_______________________________________________;
-			//Apply the above fee to the account balance of the buyer 			
-			_______________________________________________;
+			t.setBuyerFee(accounts.getTraderAccount(t.getBuyer()).getFee(t));
+			//Apply the above fee to the account balance of the buyer 	
+			accounts.getTraderAccount(t.getBuyer()).applyFee(t);
 			//Apply the trade payment to the account balance of the buyer (they spent money)
-			_______________________________________________;
+			accounts.getTraderAccount(t.getBuyer()).withdrawMoney(t.getValue());
 			//Add the bought stocks to the position of the buyer
-			_______________________________________________;
+			accounts.getTraderAccount(t.getBuyer()).addToPosition(t.getSecurity().getTicker(), t.getQuantity());
 			
 			//Update balances for Seller
 			
-			//Get the fee that the seller is supposed to pay
-			_______________________________________________;
+			//Get the fee tWhat the seller is supposed to pay
+			t.setSellerFee(accounts.getTraderAccount(t.getSeller()).getFee(t));
 			//Apply the above fee to the account balance of the seller
-			_______________________________________________;
+			accounts.getTraderAccount(t.getSeller()).applyFee(t);
 			//Apply the trade payment to the account balance of the seller (they earned money)
-			_______________________________________________;
+			accounts.getTraderAccount(t.getSeller()).addMoney(t.getValue());
 			//Deduct the sold stocks from the position of the seller
-			_______________________________________________;
+			accounts.getTraderAccount(t.getSeller()).deductFromPosition(t.getSecurity().getTicker(), t.getQuantity());
 			
 			this.totalFees += t.getBuyerFee() + t.getSellerFee(); 
 		}
